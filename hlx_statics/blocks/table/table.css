@@ -1,0 +1,289 @@
+main div.table-container:has(.table.background-color-white) {
+  background-color: white !important;
+  overflow-x: auto;
+}
+
+main div.table-wrapper {
+  padding: 80px 32px;
+}
+
+main div.table-container {
+  background: rgb(245, 245, 245);
+  overflow-x: auto;
+}
+
+main div.table-wrapper div.table {
+  max-width: 1280px;
+  padding: 80px 0px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+body.documentation main div.table-wrapper div.table , body.documentation main div.table-wrapper {
+  padding: 0 !important;
+}
+
+main div.table-wrapper .table table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+main div.table-wrapper .table table tbody tr {
+  border-bottom: 1px solid;
+}
+
+main div.table-wrapper .table table th {
+  font-weight: 700;
+}
+
+main div.table-wrapper .table table th,
+main div.table-wrapper .table table td {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+/* no header variant */
+main div.table-wrapper .table.no-header table tbody tr {
+  border-top: 1px solid;
+}
+
+/* striped variant */
+/* .table.striped tbody tr:nth-child(odd) {
+  background-color: var(--overlay-background-color);
+} */
+
+/* bordered variant */
+main div.table-wrapper .table.bordered table th,
+main div.table-wrapper .table.bordered table td {
+  border: 1px solid;
+}
+
+main div.table-wrapper .spectrum-Table {
+  border-spacing: 0
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table-headCell {
+  text-align: left
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table-headCell {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main div.table-wrapper .spectrum-Table-headCell {
+  border-radius: 0px;
+  box-sizing: border-box;
+  cursor: default;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  min-height: 32px;
+  outline: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-transform: uppercase;
+  transition: color .13s ease-in-out
+}
+
+main div.table-wrapper .spectrum-Table-body {
+  overflow: auto;
+  position: relative;
+  vertical-align: top;
+}
+
+main div.table-wrapper .spectrum-Table-body {
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:first-child .spectrum-Table-cell:first-child {
+  border-top-left-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:first-child .spectrum-Table-cell:last-child {
+  border-top-right-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:last-child .spectrum-Table-cell:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:last-child .spectrum-Table-cell:last-child {
+  border-bottom-right-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table-cell {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main div.table-wrapper .spectrum-Table-cell {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  min-height: 22px;
+  padding-bottom: 7px;
+  padding-top: 11px;
+}
+
+main div.table-wrapper .spectrum-Table-cell,
+main div.table-wrapper .spectrum-Table-headCell {
+  position: relative
+}
+
+main div.table-wrapper .spectrum-Table-row {
+  cursor: pointer;
+  position: relative;
+  transition: background-color .13s ease-in-out
+}
+
+main div.table-wrapper .spectrum-Table-row:focus {
+  outline: 0
+}
+
+main div.table-wrapper .spectrum-Table>.spectrum-Table-body>.spectrum-Table-row:last-of-type {
+  border-bottom-style: none
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-headCell {
+  text-align: left
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-headCell {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-headCell {
+  border-radius: 0px;
+  box-sizing: border-box;
+  cursor: default;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  min-height: 32px;
+  outline: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-transform: uppercase;
+  transition: color .13s ease-in-out
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-body {
+  overflow: auto;
+  position: relative;
+  vertical-align: top;
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-body {
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:first-child .spectrum-Table-cell:first-child {
+  border-top-left-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:first-child .spectrum-Table-cell:last-child {
+  border-top-right-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:last-child .spectrum-Table-cell:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table tbody.spectrum-Table-body .spectrum-Table-row:last-child .spectrum-Table-cell:last-child {
+  border-bottom-right-radius: 4px;
+}
+
+[dir=ltr] main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-cell {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-cell {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  min-height: 18px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-cell,
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-headCell {
+  position: relative
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-row {
+  cursor: pointer;
+  position: relative;
+  transition: background-color .13s ease-in-out
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table-row:focus {
+  outline: 0
+}
+
+main div.table-wrapper .spectrum-Table--spacious .spectrum-Table>.spectrum-Table-body>.spectrum-Table-row:last-of-type {
+  border-bottom-style: none
+}
+
+main div.table-wrapper .spectrum-Table-headCell {
+  background-color: transparent;
+  color: rgb(110, 110, 110);
+}
+
+main div.table-wrapper .spectrum-Table-body {
+  background-color: rgb( 255, 255, 255);
+  border-color: rgb(213, 213, 213);
+  border-style: solid
+}
+
+main div.table-wrapper tbody.spectrum-Table-body {
+  border: none
+}
+
+main div.table-wrapper tbody.spectrum-Table-body .spectrum-Table-row {
+  border-top: none
+}
+
+main div.table-wrapper tbody.spectrum-Table-body .spectrum-Table-cell {
+  border-top: 1px solid rgb(213, 213, 213);
+}
+
+[dir=ltr] main div.table-wrapper tbody.spectrum-Table-body .spectrum-Table-row .spectrum-Table-cell:first-child {
+  border-left: 1px solid rgb(213, 213, 213);
+}
+
+[dir=ltr] main div.table-wrapper tbody.spectrum-Table-body .spectrum-Table-row .spectrum-Table-cell:last-child {
+  border-right: 1px solid rgb(213, 213, 213);
+}
+
+main div.table-wrapper .spectrum-Table-row,
+main div.table-wrapper tbody.spectrum-Table-body .spectrum-Table-row:last-child .spectrum-Table-cell {
+  border-bottom: 1px solid rgb(213, 213, 213);
+}
+
+main div.table-wrapper .spectrum-Table-row {
+  background-color: transparent;
+}
+
+main div.table-wrapper .spectrum-Table-row:hover {
+  background-color: rgba(0,0,0,0.06);
+}
+
+main div.table-wrapper .spectrum-Table-row:active {
+  background-color: rgba(0,0,0,0.1);
+}
+
+main div.table-wrapper .spectrum-Table-cell {
+  background-color: transparent;
+  color: rgb(75, 75, 75);
+}

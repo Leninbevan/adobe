@@ -1,0 +1,182 @@
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=line-numbers+toolbar+copy-to-clipboard, then edited and reduced for dev-site */
+code[class*=language-],
+pre[class*=language-] {
+    color: rgb(235, 235, 235);
+    background: 0 0;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.6;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none
+}
+
+pre[class*=language-] {
+    padding: 1em;
+    margin: 0;
+    overflow: auto;
+    background: rgb(15, 15, 15);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: rgb(185, 185, 185) !important;
+}
+
+.token.punctuation {
+  color: rgb(227, 227, 227) !important;
+}
+
+.token.tag,
+.token.namespace,
+.token.deleted {
+  color: rgb(245, 107, 183) !important;
+}
+
+.token.boolean,
+.token.number,
+.token.attr-name,
+.token.function,
+.token.function-name {
+  color: rgb(75, 156, 245) !important;
+}
+
+.token.attr-name {
+  color: rgb(144, 144, 250) !important;
+}
+
+.token.property,
+.token.property.string,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: rgb(180, 131, 240) !important;
+}
+
+.token.class-name {
+  color: rgb(35, 178, 184) !important;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: rgb(227, 102, 239) !important;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex {
+  color: rgb(57, 185, 144) !important;
+}
+
+.token.variable {
+  color: rgb(236, 90, 170) !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: rgb(75, 156, 245) !important;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold !important;
+}
+.token.italic {
+  font-style: italic !important;
+}
+
+.token.entity {
+  cursor: help !important;
+}
+
+.token.inserted {
+  color: rgb(57, 185, 144) !important;
+}
+
+pre[class*=language-].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    padding-top: 3.8em;
+    counter-reset: linenumber
+}
+
+pre[class*=language-].line-numbers>code {
+    position: relative;
+    white-space: inherit
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-right: none;
+}
+
+.line-numbers-rows>span {
+    display: block;
+    counter-increment: linenumber
+}
+
+.line-numbers-rows>span:before {
+    content: counter(linenumber);
+    color: rgb(144, 144, 144);
+    display: block;
+    padding-right: .8em;
+    text-align: right
+}
+div.code-toolbar {
+    position: relative
+}
+
+div.code-toolbar>.toolbar {
+    position: absolute;
+    z-index: 10;
+    top: .6em;
+    right: .6em;
+}
+
+div.code-toolbar>.toolbar>.toolbar-item>button {
+    background: 0 0;
+    border: 1.5px solid rgb(112, 112, 112);
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgb(235, 235, 235);
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 1em;
+    padding: 0.6em;
+    background: rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,986 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+@import url('./spectrum/spectrum.min.css');
+
+html,
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spectrum {
+  --spectrum-global-font-family-serif: adobe-clean-serif, adobe-clean-serif-fallback;
+  --spectrum-card-border-size: 1px;
+  --spectrum-card-border-radius: 4px;
+  --spectrum-card-min-width: 240px;
+  --spectrum-card-body-padding-left: 24px;
+  --spectrum-card-body-padding-right: 24px;
+  --spectrum-card-body-padding-bottom: 20px;
+  --spectrum-card-body-padding-top: 20px;
+  --spectrum-card-subtitle-padding-right: 8px;
+  --spectrum-card-body-content-min-height: 14px;
+  --spectrum-card-body-content-margin-top: 6px;
+  --spectrum-global-dimension-size-225: 22px;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Trebuchet MS", "Lucida Grande", sans-serif;
+  font-size: 14px;
+}
+
+.spectrum,
+.spectrum-Body {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum--medium {
+  --spectrum-card-footer-border-top-size: 1px;
+  --spectrum-card-footer-padding-top: 14px;
+}
+
+.spectrum--light {
+  --spectrum-global-color-gray-75: rgb(250, 250, 250);
+  --spectrum-global-color-gray-700: rgb(110, 110, 110);
+  --spectrum-global-color-gray-800: rgb(75, 75, 75);
+  --spectrum-global-color-gray-900: rgb(44, 44, 44);
+}
+
+/* fallback font for adobe-clean-serif (900) */
+@font-face {
+  font-family: "adobe-clean-serif-fallback";
+  size-adjust: 109.64%;
+  src: local("Times New Roman");
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.title-header {
+  text-align: center;
+  padding-bottom: 16px;
+  padding-top: 60px;
+}
+
+.title-body {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+#onetrust-consent-sdk,
+#ot-cookie-settings {
+  font-family: "adobe-clean", sans-serif;
+}
+
+main {
+  background-color: rgb(245,245,245);
+}
+
+main .section {
+  padding: var(--spectrum-global-dimension-size-400) 0;
+}
+
+main .section .section-title {
+  margin: 0;
+  text-align: center;
+}
+
+/* progressive section appearance */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
+
+body>header {
+  height: 81px;
+}
+
+body.sidekick-library #onetrust-consent-sdk {
+  display: none
+}
+
+main .inline-code {
+  font-family: Courier, monospace;
+  font-size: 0.98rem;
+  background-color: rgb(245, 245, 245);
+  padding: 0 2px;
+  margin: 0;
+  display: inline-block;
+  min-width: auto;
+  border: 0.8px solid rgb(213, 213, 213);
+  border-radius: 3px;
+}
+
+/* animate anchor */
+main .heading2 h2,
+main .heading3 h3,
+main .heading4 h4,
+main .heading5 h5,
+main .heading6 h6,
+main .heading6 h6 {
+  & span a {
+    opacity: 0;
+    transition: opacity 130ms ease-in-out;
+
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &:hover span a {
+    opacity: 1;
+  }
+}
+
+main .heading4 h4,
+main .heading5 h5,
+main .heading6 h6 {
+  max-width: 1280px;
+  margin: 32px auto 0 auto;
+
+  &+ul,
+  &+ol {
+    margin-top: var(--spectrum-global-dimension-size-200);
+  }
+}
+
+main .heading2 h2>span {
+  margin-left: 8px !important;
+}
+
+main .heading3 h3>span,
+main .heading4 h4>span,
+main .heading5 h5>span,
+main .heading6 h6>span {
+  margin-left: 4px !important;
+}
+
+.spectrum-Heading--sizeXXL {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeXL {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeL {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeM {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeS {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeXS {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading--sizeXXS {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Heading {
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Trebuchet MS", "Lucida Grande", sans-serif;
+  font-weight: 700;
+}
+
+.spectrum-Heading em,
+.spectrum-Heading .spectrum-Heading-emphasized {
+  font-style: italic;
+}
+
+.spectrum-Heading strong,
+.spectrum-Heading .spectrum-Heading-strong {
+  font-weight: 700;
+}
+
+.spectrum-Heading--serif {
+  font-family: adobe-clean-serif, adobe-clean-serif-fallback;
+}
+
+.spectrum-Heading--heavy {
+  font-weight: 900;
+}
+
+.spectrum-Heading--heavy em,
+.spectrum-Heading--heavy .spectrum-Heading-emphasized {
+  font-style: italic;
+}
+
+.spectrum-Heading--heavy strong,
+.spectrum-Heading--heavy .spectrum-Heading-strong {
+  font-weight: 900;
+}
+
+.spectrum-Heading--light {
+  font-weight: 300;
+}
+
+.spectrum-Heading--light em,
+.spectrum-Heading--light .spectrum-Heading-emphasized {
+  font-style: italic;
+}
+
+.spectrum-Heading--light strong,
+.spectrum-Heading--light .spectrum-Heading-strong {
+  font-weight: 300;
+}
+
+.spectrum-Body--sizeXXXL {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeXXL {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeXL {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeL {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeM {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeS {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body--sizeXS {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Body {
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Trebuchet MS", "Lucida Grande", sans-serif;
+}
+
+.spectrum-Body strong,
+.spectrum-Body .spectrum-Body-strong {
+  font-weight: 700;
+}
+
+.spectrum-Body em,
+.spectrum-Body .spectrum-Body-emphasized {
+  font-style: italic;
+}
+
+.spectrum-Body--serif {
+  font-family: adobe-clean-serif, adobe-clean-serif-fallback;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeXXXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeXXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeM {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeS {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeXS {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Heading--sizeXXS {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeXXXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeXXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeXL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeL {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeM {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeS {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.spectrum-Typography .spectrum-Body--sizeXS {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.spectrum-Heading--sizeXXXL {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeXXL {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeXL {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeL {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeM {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeS {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeXS {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading--sizeXXS {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXXL--light {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXL--light {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXL--light {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeL--light {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXXL--heavy {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXL--heavy {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXL--heavy {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeL--heavy {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXXL--heading {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXXL--heading {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeXL--heading {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Heading-sizeL--heading {
+  color: rgb(44, 44, 44);
+}
+
+.spectrum-Body--sizeXXXL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeXXL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeXL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeM {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeS {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Body--sizeXS {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Detail--sizeXL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Detail--sizeL {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Detail--sizeM {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Detail--sizeS {
+  color: rgb(75, 75, 75);
+}
+
+.spectrum-Code--sizeXL {
+  color: rgb(75, 75, 75);
+}
+
+
+.spectrum-Button {
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-transform: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: 3px solid;
+  border-radius: 20px;
+  border-width: 2px
+}
+
+.spectrum-Button--sizeM {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.spectrum-Button.spectrum-Button--fill:disabled,
+.spectrum-Button.spectrum-Button--fill:not(:disabled) {
+  border-color: transparent;
+}
+
+.spectrum-Button.spectrum-Button--fill.spectrum-Button--accent:not(.spectrum-Button--staticWhite):not(.spectrum-Button--staticBlack):not(:disabled) {
+  background-color: rgb(4, 105, 227);
+  color: white
+}
+
+.spectrum-Button--secondary {
+  background-color: transparent;
+  border-color: rgb(110, 110, 110);
+  color: rgb(110,110,110);
+}
+
+.spectrum-Button--secondary:hover {
+  background-color: rgb(110, 110, 110);
+  border-color: rgb(110, 110, 110);
+  color: rgb(255, 255, 255);
+}
+
+.spectrum-Button--secondary.focus-ring {
+  background-color: rgb(110, 110, 110);
+  border-color: rgb(110, 110, 110);
+  color: rgb(255, 255, 255);
+}
+
+.spectrum-Button--secondary:active {
+  background-color: rgb(75, 75, 75);
+  border-color: rgb(75, 75, 75);
+  color: rgb(255, 255, 255);
+}
+
+.spectrum-Button--secondary:disabled,
+.spectrum-Button--secondary.is-disabled {
+  background-color: rgb(234, 234, 234);
+  border-color: rgb(234, 234, 234);
+  color: rgb(179, 179, 179);
+}
+
+.spectrum-Dialog {
+  display: flex;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  outline: none;
+}
+
+.spectrum-Dialog--medium {
+  width: 450px;
+}
+
+.spectrum-Underlay {
+  background: rgb(0 0 0 / 40%);
+}
+
+.spectrum-Underlay.is-open {
+  transition: opacity 300ms cubic-bezier(0, 0, 1, 1) 0ms;
+  opacity: 0.1;
+  position: fixed;
+  overflow: hidden;
+}
+
+.spectrum-Modal {
+  border-radius: 4px;
+}
+
+.spectrum-Modal.is-open {
+  transition: transform 250ms cubic-bezier(0, 0, .4, 1) 160ms, opacity 250ms cubic-bezier(0, 0, .4, 1) 160ms;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.spectrum-Menu-checkmark {
+  padding-left: 8px !important;
+  margin-top: 6px !important;
+}
+
+.spectrum-UIIcon-Checkmark100 {
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.spectrum-ActionButton {
+  border-radius: 4px;
+  border: 1px solid rgb(177, 177, 177);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
+
+.spectrum-ActionButton:hover {
+  background-color: rgb(230, 230, 230);
+  color: black;
+}
+
+.spectrum-ActionButton--sizeXS {
+  block-size: 20px;
+  padding: 1px 7px;
+  font-size: 13.3333px;
+}
+
+.spectrum-ActionButton--sizeS {
+  block-size: 24px;
+  padding: 1px 8px;
+}
+
+.spectrum-ActionButton--sizeM {
+  block-size: 32px;
+  padding: 1px 11px;
+}
+
+.spectrum-ActionButton--sizeL {
+  block-size: 40px;
+  padding: 1px 14px;
+}
+
+.spectrum-ActionButton--sizeXL {
+  block-size: 48px;
+  padding: 1px 17px;
+}
+
+.spectrum-ActionButton--sizeXS .spectrum-ActionButton-label {
+  font-size: 11px;
+  line-height: 14.3px;
+}
+
+.spectrum-ActionButton--sizeS .spectrum-ActionButton-label {
+  font-size: 12px;
+  line-height: 15.6px;
+}
+
+.spectrum-ActionButton--sizeM .spectrum-ActionButton-label {
+  font-size: 14px;
+  line-height: 18.2px;
+}
+
+.spectrum-ActionButton--sizeL .spectrum-ActionButton-label {
+  font-size: 16px;
+  line-height: 20.8px;
+}
+
+.spectrum-ActionButton--sizeXL .spectrum-ActionButton-label {
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.spectrum-ActionButton-label {
+  font-size: 14px;
+}
+
+.spectrum-ActionButton:disabled,
+.spectrum-ActionButton[disabled=true] {
+  color: rgb(177, 177, 177);
+  border-color: rgb(213, 213, 213);
+  cursor: default;
+}
+
+.spectrum-ActionButton:disabled:hover {
+  background-color: transparent;
+}
+
+.spectrum-ActionButton--quiet {
+  border-color: transparent;
+  background-color: transparent;
+  color: rgb(75,75,75);
+}
+
+.spectrum-ActionButton--staticWhite {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.spectrum-ActionButton--staticWhite:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.spectrum-ActionButton--staticWhite .spectrum-ActionButton-label {
+  color: rgb(255, 255, 255);
+}
+
+.spectrum-ActionButton--staticBlack {
+  border-color: rgba(0, 0, 0, 0.55);
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+.spectrum-ActionButton--staticBlack:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.spectrum-ActionButton--staticBlack .spectrum-ActionButton-label {
+  color: rgb(0, 0, 0);
+}
+
+.spectrum-Icon {
+  display: inline-block;
+  block-size: 18px;
+  fill: currentColor;
+}
+
+.spectrum-Icon--sizeXS,
+.spectrum-Icon--sizeXS img,
+.spectrum-Icon--sizeXS svg {
+  height: 14px;
+  width: 14px;
+}
+
+.spectrum-Icon--sizeS,
+.spectrum-Icon--sizeS img,
+.spectrum-Icon--sizeS svg {
+  height: 16px;
+  width: 16px;
+}
+
+.spectrum-Icon--sizeM,
+.spectrum-Icon--sizeM img,
+.spectrum-Icon--sizeM svg {
+  height: 18px;
+  width: 18px;
+}
+
+.spectrum-Icon:not(:root) {
+  overflow: hidden;
+}
+
+.spectrum-Icon--sizeL,
+.spectrum-Icon--sizeL img,
+.spectrum-Icon--sizeL svg {
+  height: 20px;
+  width: 20px;
+}
+
+.spectrum-Icon--sizeXL,
+.spectrum-Icon--sizeXL img,
+.spectrum-Icon--sizeXL svg {
+  height: 22px;
+  width: 22px;
+}
+
+.spectrum-Link--quiet {
+  text-decoration: none !important;
+}
+
+.spectrum-Link {
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: underline;
+  transition: color .13s ease-in-out;
+  color: rgb(0, 84, 182) !important;
+}
+
+.spectrum-Link--quiet:hover {
+  text-decoration: underline !important;
+}
+
+.spectrum-Link--primary {
+  color: rgb(0, 84, 182) !important;
+}
+
+.spectrum-Link--secondary {
+  color: inherit !important;
+}
+
+.help-icon, .info-icon{
+  color: rgb(0, 84, 182);
+}
+
+.success-icon {
+  color: rgb(0, 101, 62);
+}
+
+.error-icon {
+  color: rgb(209 10 10);
+}
+
+.warning-icon {
+  color: rgb(246,133,17);
+}
+
+.spectrum-Divider {
+  border: none;
+  border-radius: 2px;
+  border-width: 2px;
+  height: 2px;
+  overflow: visible;
+  width: 2px;
+}
+
+.spectrum-Divider--sizeM {
+  background-color: rgb(213, 213, 213);
+}
+
+main .default-content-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+main .default-content-wrapper a {
+  color: rgb(0, 84, 182);
+  text-decoration: unset;
+  font-weight: bold;
+}
+
+main .default-content-wrapper a:hover{
+  text-decoration: underline;
+}
+
+main .default-content-wrapper strong{
+  color: rgb(34,34,34);
+}
+
+main .content-header {
+  display:flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .github-actions-block{
+  display: flex;
+  gap: 20px;
+  min-width: 250px;
+}
+
+main .action-buttons{
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+}
+
+main .action-buttons svg{
+  color: black !important;
+}
+
+main .action-buttons div{
+  color: black !important;
+}
+
+main .default-content-wrapper img{
+  width: 100%;
+  height: 100%;
+}
+
+main li h3{
+  color: black;
+}
+
+main .code-wrapper, main .nested-code-wrapper{
+  max-width: 60vw;
+  margin: 10px 0px;
+}
+main:not(:has(.onthispage-wrapper)) .code-wrapper {
+  max-width: none;
+  width: 100%;
+}
+
+main a{
+  color: rgb(0, 84, 182);
+  text-decoration: none;
+}
+
+main a:hover{
+  text-decoration: underline;
+}

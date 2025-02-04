@@ -1,0 +1,199 @@
+main div.tab-container:has(.tab.background-color-navy) {
+    background-color: rgb(15, 55, 95);
+}
+
+main .tab-wrapper {
+    padding: 25px 0;
+}
+
+main .tab-container {
+    background-color: rgb(245, 245, 245);
+    padding: 3%;
+}
+
+main div.tab-wrapper .tab {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main div.tab-wrapper .tab-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 54px;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 260px;
+}
+
+main div.tab-wrapper .tab-button.active,
+main div.tab-wrapper .tab-button:hover {
+    background-color: #2e3c6a;
+    color: white;
+}
+
+main div.tab-wrapper div.code-toolbar>.toolbar>.toolbar-item>button {
+    padding: 12px;
+    height: 32px;
+    background: transparent;
+    color: white;
+    text-align: center;
+    right: 24px;
+    position: relative;
+    border-color: rgb(112, 112, 112);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 0;
+}
+
+main div.tab-wrapper .line-numbers-rows>span {
+    height: 24px !important;
+}
+
+@media only screen and (max-width: 860px) {
+
+    main div.tab-wrapper div.code-toolbar>.toolbar>.toolbar-item>button {
+        padding: 0;
+        height: 25px;
+        right: 0px;
+    }
+
+}
+
+main div.tab-wrapper .tabs-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+main div.tab-wrapper .tab-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main div.tab-wrapper .tab-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+main div.tab-wrapper .tab-content,
+main div.tab-wrapper .nested-tab-content {
+    display: none;
+}
+
+main div.tab-wrapper .tab-content.active,
+main div.tab-wrapper .nested-tab-content.active {
+    display: block;
+}
+
+main div.tab-wrapper .nested-tabs-wrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+main div.tab-wrapper .nested-tab-button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+main div.tab-wrapper .nested-content-wrapper {
+    margin-top: 10px;
+}
+
+main div.tab-wrapper .table-wrapper {
+    margin-top: 10px;
+}
+
+main div.tab-wrapper .code-toolbar {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+main div.tab-wrapper .tab.vertical {
+    flex-direction: row;
+}
+
+main div.tab-wrapper .tab.vertical .tabs-wrapper,
+main div.tab-wrapper .tab.horizontal {
+    flex-direction: column;
+}
+
+main div.tab-wrapper .tab.vertical>.tabs-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+main div.tab-wrapper .tab.vertical>.content-wrapper {
+    width: 80%;
+}
+
+main div.tab-wrapper .tab {
+    width: 100%;
+}
+
+main div.tab-wrapper .sub-tab-button.active {
+    color: white !important;
+}
+
+main div.tab-wrapper .tab-button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px;
+    border: none;
+    background: #eee;
+    font-size: 16px;
+}
+
+main div.tab-wrapper .tab-content,
+main div.tab-wrapper .sub-tab-content {
+    display: none;
+}
+
+main div.tab-wrapper .tab-content.active,
+main div.tab-wrapper .sub-tab-content.active {
+    display: block;
+}
+
+main div.tab-wrapper .sub-tabs-wrapper {
+    display: flex;
+    background: #000;
+    height: 50px;
+}
+
+main div.tab-wrapper .sub-tab-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background: transparent;
+    border: none;
+    color: #e1dbdb;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main div.tab-wrapper .sub-tab-button.active {
+    border-bottom: 1px solid white;
+}
+
+main div.tab-wrapper .sub-tabs-wrapper>pre[class*=language-].line-numbers {
+    border-radius: 0 !important;
+    border: 1px solid;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}

@@ -1,0 +1,110 @@
+main div.accordion-container:has(.accordion.background-color-white) {
+    background-color: white;
+}
+
+main div.accordion-wrapper div.accordion .accordion-div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1280px !important;
+    margin: auto !important;
+}
+
+main div.accordion-container.accordion-whole {
+    padding: 32px 0;
+}
+
+main div.accordion-container.accordion-whole .accordion-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main div.accordion-wrapper div.accordion .accordion-title {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: black;
+    width: 1280px !important;
+    margin: auto !important
+}
+
+main div.accordion-wrapper div.accordion .accordion-subtitle {
+    color: rgb(110, 110, 110);
+}
+
+main div.accordion-wrapper div.accordion .accordion-item {
+    border-color: #d9d9d9 !important;
+    border-bottom: 1px solid;
+    display: list-item;
+    list-style: none;
+    width: 100%;
+}
+
+main div.accordion-wrapper div.accordion .spectrum-Accordion-ChevronIcon {
+    padding: 6px!important;
+}
+
+main div.accordion-wrapper div.accordion h3 {
+    margin: 0;
+}
+
+main div.accordion-wrapper div.accordion .accordion-itemHeader {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: left;
+    align-items: center;
+    width: 100%!important;
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+    padding-left: 0!important;
+    display: flex;
+    justify-content: flex-start;
+    font-family: inherit;
+    font-size: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 22px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    font-weight: 700 !important;
+}
+
+main div.accordion-wrapper div.accordion .accordion-itemHeader:hover {
+    background-color:  #e9eaeb;
+    color: #2C2C2C;
+}
+
+main div.accordion-wrapper div.accordion .accordion-itemContent {
+    font-size: 16px;
+    margin-top: 12px;
+    padding-left: 20px!important;
+    padding-bottom: 16px;
+    display: none;
+}
+
+main div.accordion-wrapper div.accordion .active {
+    background-color: transparent;
+}
+
+main div.accordion-wrapper div.accordion .spectrum-Icon {
+    block-size: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+    main div.accordion-wrapper div.accordion .accordion-div {
+        width: 98vw !important;
+    }
+
+    main div.accordion-wrapper div.accordion .accordion-title {
+        width: 98vw !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main div.accordion-wrapper div.accordion .spectrum-Icon {
+        block-size: 18px;
+    }
+}

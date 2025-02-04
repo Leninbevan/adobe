@@ -1,0 +1,31 @@
+main .next-prev-wrapper .next-prev {
+  display: flex;
+  margin-bottom: 64px;
+  margin-top: 64px;
+}
+
+main .next-prev-wrapper .next-page-text {
+  margin-right: 4px;
+  font-size: 16px;
+}
+
+main .next-prev-wrapper .prev-page-text {
+  margin-left: 4px;
+  font-size: 16px;
+}
+
+main .next-prev-wrapper .next-division {
+  margin-left: auto;
+  padding-left: 16px;
+}
+
+main .next-prev-wrapper .previous-page,
+main .next-prev-wrapper .next-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .next-prev-wrapper .next-page {
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,217 @@
+main div.columns-container:has(.columns.background-color-white) {
+    background-color: white !important;
+}
+
+main div.columns-container {
+    width: 100%;
+    background: rgb( 245,245,245 );
+}
+
+main div.columns-wrapper div.columns {
+    width: 1280px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+main div.columns-wrapper div.columns > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+main div.columns-wrapper  div.columns > div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+main div.columns-container.section[data-list-class="checkmark"] ul {
+    list-style: none;
+    font-size: 16px;
+    padding-top: 24px;
+    padding-left: 0px;
+}
+
+main div.columns-container.section[data-list-class="checkmark"] ul > li {
+    margin-bottom: 12px;
+}
+
+main div.columns-container.section[data-list-class="checkmark"] ul > li:before{
+    color: #096;
+    content: "\2714\0020";
+}
+
+main div.columns-wrapper  div.columns  div.second-column div.button-group-container {
+    gap: 2rem;
+    display: flex;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 620px) {
+    main div.columns-wrapper  div.columns div.first-column img {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+main div.columns-wrapper div.columns div.first-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    max-height: 350px !important;
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-top: 0;
+}
+
+main div.columns-wrapper div.columns div.first-column img {
+    width: 100%;
+}
+
+main div.columns-wrapper div.second-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 32px;
+}
+
+main .column-header .anchor-link{
+    /* padding-left: 10px; */
+    visibility: hidden;
+}
+
+main .column-header:hover .anchor-link{
+    /* padding-left: 10px; */
+    visibility: visible;
+}
+
+main div.columns-wrapper div.columns h3.column-header {
+    margin-top: 0!important;
+    margin-bottom: 16px!important;
+    scroll-margin-top:100px;
+}
+
+main div.columns-wrapper div.columns h3.column-header a {
+    font-size: 22px;
+}
+
+main div.columns-wrapper div.columns h3.column-header + p {
+    margin-top: 0!important;
+}
+
+main div.columns-wrapper  div.columns p + p {
+    margin-top: 24px;
+}
+
+main div.columns-wrapper div.columns div.listing.second-column[data-align="right"]{
+    text-align: right;
+    width: auto;
+}
+
+main div.columns-wrapper div.columns div.listing ul {
+    text-align: left;
+}
+
+main div.columns-wrapper div.second-column div.product-link-container {
+    display: flex;
+    flex-direction: row;
+    gap:  1rem;
+    padding:0;
+    margin: 0;
+}
+
+@media screen and (max-width:768px) {
+    main div.columns-wrapper div.second-column div.product-link-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main div.columns-wrapper div.columns div.product-link-container p {
+        max-width: 150px;
+    }
+    main div.columns div.first-column {
+        width: 100% !important;
+    }
+}
+
+main div.columns-wrapper div.second-column div.product-link-container p.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 16px;
+    margin-bottom: 0px;
+}
+
+main div.columns-wrapper div.second-column p.button-container {
+    margin-top:0px;
+}
+
+main div.columns-wrapper div.second-column div.product-link-container img {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+main div.columns-wrapper div.second-column div.product-link-container svg {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+main div.columns-container div.columns.center {
+    width: auto;
+}
+
+main div.columns-container div.columns.center > div {
+    align-items: start;
+}
+
+main div.columns-container div.columns.center > div > div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 32px;
+}
+
+main div.columns-container div.columns.center .button-container {
+    display: inline-flex;
+    margin: 16px 8px;
+    margin-bottom: 0;
+}
+
+main div.columns-wrapper div.columns div.first-column img {
+    height: 350px !important;
+}
+
+@media screen and (max-width: 1280px) {
+    main div.columns-wrapper  div.columns div.second-column {
+        width: 100%;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    main div.columns-wrapper div.columns {
+        width: 100% !important;
+    }
+    main div.columns-wrapper div.columns > div {
+        flex-direction: column !important;
+        padding: 0 0 !important;
+    }
+    main div.columns-container.center div.columns > div > div {
+        text-align: center;
+        padding: 32px 32px;
+    }
+
+    main div.columns-container.center div.columns > div {
+        align-items: center;
+    }
+
+    main div.columns-wrapper div.second-column div.product-link-container, main div.columns div.second-column div.button-group-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+}
